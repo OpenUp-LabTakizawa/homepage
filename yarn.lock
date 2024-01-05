@@ -808,16 +808,15 @@ queue-microtask@^1.2.2:
 
 react-dom@canary:
   version "18.3.0-canary-c5b937576-20231219"
-  resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.0-canary-c5b937576-20231219.tgz"
-  integrity sha512-MahkLDRcM+y8gNEgDHZOvfogjinhvwjjDhgNuTNHyqtC78Xz0iClZ7weD+Gdv9XL2R/AKV/EqYCpUzpey9mDLA==
-  dependencies:
-    loose-envify "^1.1.0"
-    scheduler "0.24.0-canary-c5b937576-20231219"
-
-react@canary:
-  version "18.3.0-canary-c5b937576-20231219"
   resolved "https://registry.npmjs.org/react/-/react-18.3.0-canary-c5b937576-20231219.tgz"
   integrity sha512-gvMxGf2wlOMq387pdOypG4li5iuLdpu/wDRuyETZsdLFrDcCH4RuJCIcTWcLIlP/oG5uD5yXMi2hePYuB+toyw==
+  dependencies:
+    loose-envify "^1.1.0"
+
+react@canary:
+  version "18.3.0-canary-1d5667a12-20240102"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.3.0-canary-1d5667a12-20240102.tgz#9d7f28aa49f3b0923b9b05fb40462938ec508dee"
+  integrity sha512-luErMzExiPt9LGO2xDTdspTCK0PEJIWU5vh9kgXWm3bGQ1WWndLPIyfijrqjvxBIESiGtMPthbuAaYC3LSKdLw==
   dependencies:
     loose-envify "^1.1.0"
 
