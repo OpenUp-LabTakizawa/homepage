@@ -20,9 +20,8 @@ test('p test', () => {
 })
 
 test('Image test', () => {
-  const img = document.querySelectorAll('img')
-  expect(img[0]?.alt).toEqual('Vercel Logo')
-  expect(img[1]?.alt).toEqual('Next.js Logo')
+  const img = document.querySelector('img')
+  expect(img?.alt).toEqual('OpenUp ラボ滝沢')
 })
 
 test('h2 test', () => {
