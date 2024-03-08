@@ -10,7 +10,7 @@ const inter = Sawarabi_Gothic({
 })
 
 export const metadata: Metadata = {
-  title: 'OpenUp ラボ滝沢',
+  title: 'OPENUP ラボ滝沢',
   description: '地域に寄り添った社会課題解決コミュニティ',
 }
 
