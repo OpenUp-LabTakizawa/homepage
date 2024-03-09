@@ -1,13 +1,7 @@
-import { Navbar } from '@/components/navbar'
 import type { Metadata } from 'next'
-import { Sawarabi_Gothic } from 'next/font/google'
 import type React from 'react'
 import './globals.css'
-
-const inter = Sawarabi_Gothic({
-  subsets: ['latin'],
-  weight: '400',
-})
+import { Navbar } from './navbar'
 
 export const metadata: Metadata = {
   title: 'OPENUP ラボ滝沢',
@@ -21,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body>
         <Navbar />
         {children}
       </body>
