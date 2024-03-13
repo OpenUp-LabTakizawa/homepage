@@ -4,30 +4,19 @@ import Home from './page'
 
 render(<Home />)
 
+test('Image test', () => {
+  const img = document.querySelectorAll('img')
+  expect(img[0]?.alt).toEqual('Iwate Mountain')
+})
+
+test('h1 test', () => {
+  const h2 = document.querySelectorAll('h1')
+  expect(h2[0]?.innerText).toEqual('テクノロジーで地域貢献に取り組む')
+})
+
 test('p test', () => {
   const p = document.querySelectorAll('p')
   expect(p[0]?.innerText).toEqual(
-    'Find in-depth information about Next.js features and API.',
+    '岩手県立大学と滝沢市が産官学連携を目的として設立した滝沢市IPUイノベーションセンターにOPEN UPラボ滝沢は入居しています。ラボを取り巻くコミュニティとの協働や新たな取り組みで連携し、地域社会への貢献を行っています。',
   )
-  expect(p[1]?.innerText).toEqual(
-    'Learn about Next.js in an interactive course with\u00A0quizzes!',
-  )
-  expect(p[2]?.innerText).toEqual('Explore starter templates for Next.js.')
-  expect(p[3]?.innerText).toEqual(
-    'Instantly deploy your Next.js site to a shareable URL with Vercel.',
-  )
-})
-
-test('Image test', () => {
-  const img = document.querySelectorAll('img')
-  expect(img[0]?.alt).toEqual('Vercel Logo')
-  expect(img[1]?.alt).toEqual('Next.js Logo')
-})
-
-test('h2 test', () => {
-  const h2 = document.querySelectorAll('h2')
-  expect(h2[0]?.innerText).toEqual('Docs ->')
-  expect(h2[1]?.innerText).toEqual('Learn ->')
-  expect(h2[2]?.innerText).toEqual('Templates ->')
-  expect(h2[3]?.innerText).toEqual('Deploy ->')
 })
