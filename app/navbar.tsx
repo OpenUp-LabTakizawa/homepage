@@ -8,17 +8,23 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-const siteTitle = 'OPENUP ラボ滝沢'
+const SITE_TITLE = 'OPENUP ラボ滝沢'
 
 const navItems = [
-  { name: '最新情報', href: '/info', icon: NewspaperIcon },
+  { name: '最新情報', href: '/info', icon: NewspaperIcon, color: 'primary' },
   {
     name: 'ラボ滝沢とは？',
     href: '/about',
     icon: QuestionMarkCircleIcon,
+    color: 'secondary',
   },
-  { name: 'メンバー', href: '/member', icon: UserGroupIcon },
-  { name: 'お問い合わせ', href: '/contact', icon: EnvelopeIcon },
+  { name: 'メンバー', href: '/member', icon: UserGroupIcon, color: 'accent' },
+  {
+    name: 'お問い合わせ',
+    href: '/contact',
+    icon: EnvelopeIcon,
+    color: 'success',
+  },
 ]
 
 const themeLists = [
@@ -54,15 +60,15 @@ const themeLists = [
   { name: 'ディム', value: 'dim' },
   { name: 'ノール', value: 'nord' },
   { name: 'サンセット', value: 'sunset' },
-]
+] as const
 
 export function Navbar() {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenuForSP />
         <Link href="/" className="btn btn-ghost text-xl">
-          {siteTitle}
+          {SITE_TITLE}
         </Link>
       </div>
       <NavItems />
@@ -116,7 +122,7 @@ function ThemeLists() {
           テーマ
           <ChevronDownIcon className="h-5 w-5" />
         </div>
-        <ul className="dropdown-content z-[1] w-52 rounded-box bg-base-300 p-2 shadow-2xl">
+        <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
           {themeLists.map((item) => (
             <li key={item.name}>
               <input
