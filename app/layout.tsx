@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import type React from 'react'
-import { Footer } from './footer'
+import { Footer } from './components/footer'
+import { Navbar } from './components/navbar'
 import './globals.css'
-import { Navbar } from './navbar'
 
 export const metadata: Metadata = {
   title: 'OPENUP ラボ滝沢',
