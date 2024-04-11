@@ -7,6 +7,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'OPENUP ラボ滝沢',
   description: '地域に寄り添った社会課題解決コミュニティ',
+  metadataBase: new URL('https://openuplab-takizawa.jp'),
 }
 
 export default function RootLayout({
