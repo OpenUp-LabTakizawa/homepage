@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import type { Navigation } from '../interfaces/navigation'
-import type { Themes } from '../interfaces/themes'
+import type { Theme } from '../interfaces/theme'
 import { metadata } from '../layout'
 
 export const navigation: Navigation[] = [
@@ -33,7 +33,7 @@ export const navigation: Navigation[] = [
   },
 ] as const
 
-const themes: Themes[] = [
+const themes: Theme[] = [
   { name: 'デフォルト', value: 'light' },
   { name: 'ダーク', value: 'dark' },
   { name: 'カップケーキ', value: 'cupcake' },
@@ -77,8 +77,12 @@ export function Navbar() {
           {metadata.title as string}
         </Link>
       </div>
-      <NavItems />
-      <ThemeController />
+      <div className="navbar-center hidden lg:flex">
+        <NavItems />
+      </div>
+      <div className="navbar-end">
+        <ThemeController />
+      </div>
     </div>
   )
 }
@@ -105,43 +109,39 @@ function DropdownMenu() {
 
 function NavItems() {
   return (
-    <div className="navbar-center hidden lg:flex">
-      <ul className="menu menu-horizontal px-1">
-        {navigation.map((item) => (
-          <li key={item.name}>
-            <Link href={item.href}>
-              <item.icon className="h-5 w-5" />
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="menu menu-horizontal px-1">
+      {navigation.map((item) => (
+        <li key={item.name}>
+          <Link href={item.href}>
+            <item.icon className="h-5 w-5" />
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 
 function ThemeController() {
   return (
-    <div className="navbar-end">
-      <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" className="btn m-1">
-          テーマ
-          <ChevronDownIcon className="h-5 w-5" />
-        </div>
-        <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
-          {themes.map((theme) => (
-            <li key={theme.name}>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label={theme.name}
-                value={theme.value}
-              />
-            </li>
-          ))}
-        </ul>
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn m-1">
+        テーマ
+        <ChevronDownIcon className="h-5 w-5" />
       </div>
+      <ul className="dropdown-content z-[1] h-52 w-52 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
+        {themes.map((theme) => (
+          <li key={theme.name}>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label={theme.name}
+              value={theme.value}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
