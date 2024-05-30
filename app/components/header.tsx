@@ -74,22 +74,22 @@ const themes: Theme[] = [
   { name: 'サンセット', value: 'sunset' },
 ] as const
 
-export function Navbar(): React.JSX.Element {
+export function Header(): React.JSX.Element {
   return (
-    <div className="navbar sticky top-0 z-[1] bg-base-100">
+    <header className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost text-xl">
           {metadata.title as string}
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <nav className="navbar-center hidden lg:flex">
         <NavItems />
-      </div>
+      </nav>
       <div className="navbar-end">
         <ThemeController />
       </div>
-    </div>
+    </header>
   )
 }
 
@@ -99,16 +99,18 @@ function DropdownMenu(): React.JSX.Element {
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <Bars3CenterLeftIcon className="size-7" />
       </div>
-      <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-        {navigation.map((item) => (
-          <li key={item.name}>
-            <Link href={item.href}>
-              <item.icon className={`size-5 ${item.color}`} />
-              {item.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <nav>
+        <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link href={item.href}>
+                <item.icon className={`size-5 ${item.color}`} />
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   )
 }

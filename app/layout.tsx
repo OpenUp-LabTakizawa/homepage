@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import type React from 'react'
 import { Footer } from './components/footer'
-import { Navbar } from './components/navbar'
+import { Header } from './components/header'
 import './globals.css'
+import { ScrollToTop } from './components/scrollToTop'
 
 export const metadata: Metadata = {
   title: 'OPENUP ラボ滝沢',
@@ -18,8 +19,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Navbar />
-        {children}
+        <Header />
+        <main>
+          {children}
+          <ScrollToTop />
+        </main>
         <Footer />
       </body>
     </html>
