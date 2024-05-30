@@ -3,6 +3,7 @@ import {
   ChevronDownIcon,
   EnvelopeIcon,
   NewspaperIcon,
+  PaintBrushIcon,
   QuestionMarkCircleIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
@@ -134,6 +135,7 @@ function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn m-1">
+        <PaintBrushIcon className="size-5 text-success" />
         テーマ
         <ChevronDownIcon className="size-5" />
       </div>
