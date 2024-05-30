@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import type React from 'react'
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   return (
     <main>
       <div className="hero min-h-screen bg-[url('/iwate_mountain.webp')]">
