@@ -7,6 +7,7 @@ import {
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import type React from 'react'
 import type { Navigation } from '../interfaces/navigation'
 import type { Theme } from '../interfaces/theme'
 import { metadata } from '../layout'
@@ -15,21 +16,26 @@ export const navigation: Navigation[] = [
   {
     name: '最新情報',
     href: '/info',
+    color: 'text-primary',
     icon: NewspaperIcon,
-    color: 'primary',
   },
   {
     name: 'ラボ滝沢とは？',
     href: '/about',
+    color: 'text-accent',
     icon: QuestionMarkCircleIcon,
-    color: 'secondary',
   },
-  { name: 'メンバー', href: '/member', icon: UserGroupIcon, color: 'accent' },
+  {
+    name: 'メンバー',
+    href: '/member',
+    color: 'text-secondary',
+    icon: UserGroupIcon,
+  },
   {
     name: 'お問い合わせ',
     href: '/contact',
+    color: 'text-info',
     icon: EnvelopeIcon,
-    color: 'success',
   },
 ] as const
 
@@ -68,7 +74,7 @@ const themes: Theme[] = [
   { name: 'サンセット', value: 'sunset' },
 ] as const
 
-export function Navbar() {
+export function Navbar(): React.JSX.Element {
   return (
     <div className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
@@ -87,17 +93,17 @@ export function Navbar() {
   )
 }
 
-function DropdownMenu() {
+function DropdownMenu(): React.JSX.Element {
   return (
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <Bars3CenterLeftIcon className="h-7 w-7" />
+        <Bars3CenterLeftIcon className="size-7" />
       </div>
       <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
         {navigation.map((item) => (
           <li key={item.name}>
             <Link href={item.href}>
-              <item.icon className="h-5 w-5" />
+              <item.icon className={`size-5 ${item.color}`} />
               {item.name}
             </Link>
           </li>
@@ -107,13 +113,13 @@ function DropdownMenu() {
   )
 }
 
-function NavItems() {
+function NavItems(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal px-1">
       {navigation.map((item) => (
         <li key={item.name}>
           <Link href={item.href}>
-            <item.icon className="h-5 w-5" />
+            <item.icon className={`size-5 ${item.color}`} />
             {item.name}
           </Link>
         </li>
@@ -122,12 +128,12 @@ function NavItems() {
   )
 }
 
-function ThemeController() {
+function ThemeController(): React.JSX.Element {
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn m-1">
         テーマ
-        <ChevronDownIcon className="h-5 w-5" />
+        <ChevronDownIcon className="size-5" />
       </div>
       <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
         {themes.map((theme) => (
