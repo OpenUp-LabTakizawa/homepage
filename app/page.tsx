@@ -26,7 +26,10 @@ export default function Home(): React.JSX.Element {
           <p className="mb-5">
             ラボを取り巻くコミュニティとの協働や新たな取り組みで連携し、地域社会への貢献を行っています。
           </p>
-          <Link href="/about" className="animate-bounce btn btn-warning">
+          <Link
+            href="/about"
+            className="[&:not(:hover)]:animate-bounce btn btn-warning"
+          >
             <QuestionMarkCircleIcon className="size-5 text-accent" />
             ラボ滝沢とは？
           </Link>

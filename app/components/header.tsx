@@ -80,7 +80,7 @@ export function Header(): React.JSX.Element {
     <header className="navbar sticky top-0 z-[1] bg-base-100">
       <div className="navbar-start">
         <DropdownMenu />
-        <Link href="/" className="btn btn-ghost text-xl">
+        <Link href="/" className="btn btn-ghost text-xl tilt-shaking">
           {metadata.title as string}
         </Link>
       </div>
@@ -120,7 +120,7 @@ function NavItems(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal px-1">
       {navigation.map((item) => (
-        <li key={item.name}>
+        <li key={item.name} className="hover:scale-110">
           <Link href={item.href}>
             <item.icon className={`size-5 ${item.color}`} />
             {item.name}
