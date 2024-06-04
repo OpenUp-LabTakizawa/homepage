@@ -8,10 +8,14 @@ export function Heading({ href }: { href: string }): React.JSX.Element {
 
   return (
     <>
-      <h1 className="text-5xl font-bold flex justify-center">
-        <heading.icon className={`size-12 mr-1 ${heading.color}`} />
-        {heading.name}
-      </h1>
+      <div className="max-w-fit mx-auto">
+        <h1 className="typing font-bold text-3xl">
+          <heading.icon
+            className={`inline size-9 mr-1 mb-1 ${heading.color}`}
+          />
+          {heading.name}
+        </h1>
+      </div>
       <Breadcrumb crumb={heading} />
     </>
   )
