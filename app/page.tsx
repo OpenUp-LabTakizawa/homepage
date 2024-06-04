@@ -8,17 +8,17 @@ export default function Home(): React.JSX.Element {
       <div className="hero-overlay bg-opacity-60" />
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 font-bold text-3xl animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white">
-            <span className="mb-5 font-bold text-5xl text-primary">
-              テクノロジー
-            </span>
-            で
-            <br />
-            <span className="mb-5 font-bold text-5xl text-accent">
-              地域貢献
-            </span>
-            に取り組む
-          </h1>
+          <div className="max-w-fit mb-5 mx-auto">
+            <h1 className="typing font-bold text-3xl">
+              <span className="font-bold text-5xl text-primary">
+                テクノロジー
+              </span>
+              で
+              <br />
+              <span className="font-bold text-5xl text-accent">地域貢献</span>
+              に取り組む
+            </h1>
+          </div>
           <p className="mb-5">
             岩手県立大学と滝沢市が産官学連携を目的として設立した滝沢市IPUイノベーションセンターにOPEN
             UPラボ滝沢は入居しています。
