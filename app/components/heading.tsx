@@ -1,7 +1,7 @@
-import type React from 'react'
-import { Breadcrumb } from '../components/breadcrumb'
-import type { Navigation } from '../interfaces/navigation'
-import { navigation } from './header'
+import type React from "react"
+import { Breadcrumb } from "../components/breadcrumb"
+import type { Navigation } from "../interfaces/navigation"
+import { navigation } from "./header"
 
 export function Heading({ href }: { href: string }): React.JSX.Element {
   const heading: Navigation = navigation.filter((item) => item.href === href)[0]

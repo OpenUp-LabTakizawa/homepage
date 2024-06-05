@@ -1,7 +1,7 @@
-import { HomeIcon } from '@heroicons/react/24/solid'
-import Link from 'next/link'
-import type React from 'react'
-import type { Navigation } from '../interfaces/navigation'
+import { HomeIcon } from "@heroicons/react/24/solid"
+import Link from "next/link"
+import type React from "react"
+import type { Navigation } from "../interfaces/navigation"
 
 export function Breadcrumb({
   crumb,
