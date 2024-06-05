@@ -6,73 +6,73 @@ import {
   QuestionMarkCircleIcon,
   SwatchIcon,
   UserGroupIcon,
-} from '@heroicons/react/24/outline'
-import Link from 'next/link'
-import type React from 'react'
-import type { Navigation } from '../interfaces/navigation'
-import type { Theme } from '../interfaces/theme'
-import { metadata } from '../layout'
+} from "@heroicons/react/24/outline"
+import Link from "next/link"
+import type React from "react"
+import type { Navigation } from "../interfaces/navigation"
+import type { Theme } from "../interfaces/theme"
+import { metadata } from "../layout"
 
 export const navigation: Navigation[] = [
   {
-    name: '最新情報',
-    href: '/info',
-    color: 'text-primary',
+    name: "最新情報",
+    href: "/info",
+    color: "text-primary",
     icon: NewspaperIcon,
   },
   {
-    name: 'ラボ滝沢とは？',
-    href: '/about',
-    color: 'text-accent',
+    name: "ラボ滝沢とは？",
+    href: "/about",
+    color: "text-accent",
     icon: QuestionMarkCircleIcon,
   },
   {
-    name: 'メンバー',
-    href: '/member',
-    color: 'text-secondary',
+    name: "メンバー",
+    href: "/member",
+    color: "text-secondary",
     icon: UserGroupIcon,
   },
   {
-    name: 'お問い合わせ',
-    href: '/contact',
-    color: 'text-info',
+    name: "お問い合わせ",
+    href: "/contact",
+    color: "text-info",
     icon: EnvelopeIcon,
   },
 ] as const
 
 const themes: Theme[] = [
-  { name: 'デフォルト', value: 'light' },
-  { name: 'ダーク', value: 'dark' },
-  { name: 'カップケーキ', value: 'cupcake' },
-  { name: 'マルハナバチ', value: 'bumblebee' },
-  { name: 'エメラルド', value: 'emerald' },
-  { name: 'コーポレート', value: 'corporate' },
-  { name: 'シンセウェイブ', value: 'synthwave' },
-  { name: 'レトロ', value: 'retro' },
-  { name: 'サイバーパンク', value: 'cyberpunk' },
-  { name: 'バレンタイン', value: 'valentine' },
-  { name: 'ハロウィン', value: 'halloween' },
-  { name: 'ガーデン', value: 'garden' },
-  { name: 'フォレスト', value: 'forest' },
-  { name: 'アクア', value: 'aqua' },
-  { name: 'ローファイ', value: 'lofi' },
-  { name: 'パステル', value: 'pastel' },
-  { name: 'ファンタジー', value: 'fantasy' },
-  { name: 'ワイヤーフレーム', value: 'wireframe' },
-  { name: 'ブラック', value: 'black' },
-  { name: 'ラグジュアリー', value: 'luxury' },
-  { name: 'ドラキュラ', value: 'dracula' },
-  { name: 'CMYK', value: 'cmyk' },
-  { name: 'オータム', value: 'autumn' },
-  { name: 'ビジネス', value: 'business' },
-  { name: 'アシッド', value: 'acid' },
-  { name: 'レモネード', value: 'lemonade' },
-  { name: 'ナイト', value: 'night' },
-  { name: 'コーヒー', value: 'coffee' },
-  { name: 'ウィンター', value: 'winter' },
-  { name: 'ディム', value: 'dim' },
-  { name: 'ノール', value: 'nord' },
-  { name: 'サンセット', value: 'sunset' },
+  { name: "デフォルト", value: "light" },
+  { name: "ダーク", value: "dark" },
+  { name: "カップケーキ", value: "cupcake" },
+  { name: "マルハナバチ", value: "bumblebee" },
+  { name: "エメラルド", value: "emerald" },
+  { name: "コーポレート", value: "corporate" },
+  { name: "シンセウェイブ", value: "synthwave" },
+  { name: "レトロ", value: "retro" },
+  { name: "サイバーパンク", value: "cyberpunk" },
+  { name: "バレンタイン", value: "valentine" },
+  { name: "ハロウィン", value: "halloween" },
+  { name: "ガーデン", value: "garden" },
+  { name: "フォレスト", value: "forest" },
+  { name: "アクア", value: "aqua" },
+  { name: "ローファイ", value: "lofi" },
+  { name: "パステル", value: "pastel" },
+  { name: "ファンタジー", value: "fantasy" },
+  { name: "ワイヤーフレーム", value: "wireframe" },
+  { name: "ブラック", value: "black" },
+  { name: "ラグジュアリー", value: "luxury" },
+  { name: "ドラキュラ", value: "dracula" },
+  { name: "CMYK", value: "cmyk" },
+  { name: "オータム", value: "autumn" },
+  { name: "ビジネス", value: "business" },
+  { name: "アシッド", value: "acid" },
+  { name: "レモネード", value: "lemonade" },
+  { name: "ナイト", value: "night" },
+  { name: "コーヒー", value: "coffee" },
+  { name: "ウィンター", value: "winter" },
+  { name: "ディム", value: "dim" },
+  { name: "ノール", value: "nord" },
+  { name: "サンセット", value: "sunset" },
 ] as const
 
 export function Header(): React.JSX.Element {
