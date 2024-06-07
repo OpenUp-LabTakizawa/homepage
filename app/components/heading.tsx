@@ -1,7 +1,39 @@
+import { Breadcrumb } from "@/app/components/breadcrumb"
+import type { Navigation } from "@/app/interfaces/navigation"
+import {
+  EnvelopeIcon,
+  NewspaperIcon,
+  QuestionMarkCircleIcon,
+  UserGroupIcon,
+} from "@heroicons/react/24/outline"
 import type React from "react"
-import { Breadcrumb } from "../components/breadcrumb"
-import type { Navigation } from "../interfaces/navigation"
-import { navigation } from "./header"
+
+export const navigation: Navigation[] = [
+  {
+    name: "最新情報",
+    href: "/info",
+    color: "text-primary",
+    icon: NewspaperIcon,
+  },
+  {
+    name: "ラボ滝沢とは？",
+    href: "/about",
+    color: "text-accent",
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    name: "メンバー",
+    href: "/member",
+    color: "text-secondary",
+    icon: UserGroupIcon,
+  },
+  {
+    name: "お問い合わせ",
+    href: "/contact",
+    color: "text-info",
+    icon: EnvelopeIcon,
+  },
+] as const
 
 export function Heading({ href }: { href: string }): React.JSX.Element {
   const heading: Navigation = navigation.filter((item) => item.href === href)[0]
