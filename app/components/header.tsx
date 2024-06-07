@@ -1,44 +1,14 @@
+"use client"
+import type { Theme } from "@/app/interfaces/theme"
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
-  EnvelopeIcon,
-  NewspaperIcon,
-  QuestionMarkCircleIcon,
   SwatchIcon,
-  UserGroupIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import type React from "react"
-import type { Navigation } from "../interfaces/navigation"
-import type { Theme } from "../interfaces/theme"
-import { metadata } from "../layout"
-
-export const navigation: Navigation[] = [
-  {
-    name: "最新情報",
-    href: "/info",
-    color: "text-primary",
-    icon: NewspaperIcon,
-  },
-  {
-    name: "ラボ滝沢とは？",
-    href: "/about",
-    color: "text-accent",
-    icon: QuestionMarkCircleIcon,
-  },
-  {
-    name: "メンバー",
-    href: "/member",
-    color: "text-secondary",
-    icon: UserGroupIcon,
-  },
-  {
-    name: "お問い合わせ",
-    href: "/contact",
-    color: "text-info",
-    icon: EnvelopeIcon,
-  },
-] as const
+import { useState } from "react"
+import { navigation } from "./heading"
 
 const themes: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -76,12 +46,34 @@ const themes: Theme[] = [
 ] as const
 
 export function Header(): React.JSX.Element {
+  const title: string = "OPENUP ラボ滝沢"
+  const [scrollState, setScrollState] = useState<{
+    scrollY: number
+    isScrollDown: boolean
+  }>({ scrollY: 0, isScrollDown: false })
+  const headerHeight: number = 100
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      setScrollState({
+        scrollY: window.scrollY,
+        isScrollDown: scrollState.scrollY < window.scrollY,
+      })
+    })
+  }
+
   return (
-    <header className="navbar sticky top-0 z-[1] bg-base-100">
+    <header
+      className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-10 ${
+        headerHeight < scrollState.scrollY && scrollState.isScrollDown
+          ? "-translate-y-20"
+          : "translate-y-0"
+      }`}
+    >
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost text-xl tilt-shaking">
-          {metadata.title as string}
+          {title}
         </Link>
       </div>
       <nav className="navbar-center hidden lg:flex">
