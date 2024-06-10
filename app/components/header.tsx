@@ -1,5 +1,7 @@
 "use client"
+
 import type { Theme } from "@/app/interfaces/theme"
+import { SITE_TITLE, navigation } from "@/app/lib/constant"
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
@@ -8,7 +10,6 @@ import {
 import Link from "next/link"
 import type React from "react"
 import { useState } from "react"
-import { navigation } from "./heading"
 
 const themes: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -46,8 +47,7 @@ const themes: Theme[] = [
 ] as const
 
 export function Header(): React.JSX.Element {
-  const title: string = "OPENUP ラボ滝沢"
-  const [scrollState, setScrollState] = useState<{
+  const [scrollY, setScrollY] = useState<{
     scrollY: number
     isScrollDown: boolean
   }>({ scrollY: 0, isScrollDown: false })
@@ -55,9 +55,9 @@ export function Header(): React.JSX.Element {
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
-      setScrollState({
+      setScrollY({
         scrollY: window.scrollY,
-        isScrollDown: scrollState.scrollY < window.scrollY,
+        isScrollDown: scrollY.scrollY < window.scrollY,
       })
     })
   }
@@ -65,7 +65,7 @@ export function Header(): React.JSX.Element {
   return (
     <header
       className={`transition duration-400 ease bg-base-100 navbar sticky top-0 z-10 ${
-        headerHeight < scrollState.scrollY && scrollState.isScrollDown
+        headerHeight < scrollY.scrollY && scrollY.isScrollDown
           ? "-translate-y-20"
           : "translate-y-0"
       }`}
@@ -73,7 +73,7 @@ export function Header(): React.JSX.Element {
       <div className="navbar-start">
         <DropdownMenu />
         <Link href="/" className="btn btn-ghost text-xl tilt-shaking">
-          {title}
+          {SITE_TITLE}
         </Link>
       </div>
       <nav className="navbar-center hidden lg:flex">

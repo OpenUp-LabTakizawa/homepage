@@ -4,9 +4,10 @@ import { Footer } from "./components/footer"
 import { Header } from "./components/header"
 import "./globals.css"
 import { ScrollToTop } from "./components/scrollToTop"
+import { SITE_TITLE } from "./lib/constant"
 
 export const metadata: Metadata = {
-  title: "OPENUP ラボ滝沢",
+  title: SITE_TITLE,
   description: "地域に寄り添った社会課題解決コミュニティ",
   metadataBase: new URL("https://openuplab-takizawa.jp"),
 }
