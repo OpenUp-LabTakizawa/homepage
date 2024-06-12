@@ -96,7 +96,7 @@ function DropdownMenu(): React.JSX.Element {
         <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
           {navigation.map((item) => (
             <li key={item.name}>
-              <Link href={item.href}>
+              <Link href={item.href} className="font-bold">
                 <item.icon className={`size-5 ${item.color}`} />
                 {item.name}
               </Link>
@@ -113,7 +113,7 @@ function NavItems(): React.JSX.Element {
     <ul className="menu menu-horizontal px-1">
       {navigation.map((item) => (
         <li key={item.name} className="hover:scale-110">
-          <Link href={item.href}>
+          <Link href={item.href} className="font-bold">
             <item.icon className={`size-5 ${item.color}`} />
             {item.name}
           </Link>

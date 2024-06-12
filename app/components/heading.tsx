@@ -7,7 +7,7 @@ export function Heading({ href }: { href: string }): React.JSX.Element {
   const heading: Navigation = navigation.filter((item) => item.href === href)[0]
 
   return (
-    <>
+    <section>
       <div className="max-w-fit mx-auto">
         <h1 className="typing font-bold text-3xl">
           <heading.icon
@@ -17,6 +17,6 @@ export function Heading({ href }: { href: string }): React.JSX.Element {
         </h1>
       </div>
       <Breadcrumb crumb={heading} />
-    </>
+    </section>
   )
 }
