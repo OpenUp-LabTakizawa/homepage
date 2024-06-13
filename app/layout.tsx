@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import type React from "react"
-import { Footer } from "./components/footer"
-import { Header } from "./components/header"
+import { Footer } from "./components/layout/footer"
+import { Header } from "./components/layout/header"
 import "./globals.css"
-import { ScrollToTop } from "./components/scrollToTop"
+import { ScrollToTop } from "./components/button/scrollToTop"
 import { SITE_TITLE } from "./lib/constant"
 
 export const metadata: Metadata = {
