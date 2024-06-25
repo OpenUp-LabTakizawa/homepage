@@ -5,7 +5,7 @@ import type React from "react"
 
 export function Breadcrumb({
   crumb,
-}: { crumb: Navigation }): React.JSX.Element {
+}: Readonly<{ crumb: Navigation }>): React.JSX.Element {
   return (
     <div className="text-sm breadcrumbs">
       <ul>
