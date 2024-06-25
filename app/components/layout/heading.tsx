@@ -3,7 +3,9 @@ import type { Navigation } from "@/app/interfaces/navigation"
 import { navigation } from "@/app/lib/constant"
 import type React from "react"
 
-export function Heading({ href }: { href: string }): React.JSX.Element {
+export function Heading({
+  href,
+}: Readonly<{ href: string }>): React.JSX.Element {
   const heading: Navigation = navigation.filter((item) => item.href === href)[0]
 
   return (
