@@ -1,24 +1,45 @@
-import { Breadcrumb } from "@/app/components/layout/breadcrumb"
 import type { Navigation } from "@/app/interfaces/navigation"
-import { navigation } from "@/app/lib/constant"
+import { HomeIcon } from "@heroicons/react/24/solid"
+import Link from "next/link"
 import type React from "react"
 
 export function Heading({
-  href,
-}: Readonly<{ href: string }>): React.JSX.Element {
-  const heading: Navigation = navigation.filter((item) => item.href === href)[0]
-
+  navigation,
+}: Readonly<{ navigation: Navigation }>): React.JSX.Element {
   return (
     <section>
       <div className="max-w-fit mx-auto">
         <h1 className="typing font-bold text-3xl">
-          <heading.icon
-            className={`inline size-9 mr-1 mb-1 ${heading.color}`}
+          <navigation.icon
+            className={`inline size-9 mr-1 mb-1 ${navigation.color}`}
           />
-          {heading.name}
+          {navigation.name}
         </h1>
       </div>
-      <Breadcrumb crumb={heading} />
+      <Breadcrumb crumb={navigation} />
     </section>
+  )
+}
+
+function Breadcrumb({
+  crumb,
+}: Readonly<{ crumb: Navigation }>): React.JSX.Element {
+  return (
+    <div className="text-sm breadcrumbs">
+      <ul>
+        <li>
+          <Link href="/">
+            <HomeIcon className="size-5 mr-1 text-primary" />
+            ホーム
+          </Link>
+        </li>
+        <li>
+          <Link href={crumb.href}>
+            <crumb.icon className={`size-5 mr-1 ${crumb.color}`} />
+            {crumb.name}
+          </Link>
+        </li>
+      </ul>
+    </div>
   )
 }
