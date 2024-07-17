@@ -93,7 +93,7 @@ function DropdownMenu(): React.JSX.Element {
         <Bars3CenterLeftIcon className="size-7" />
       </div>
       <nav>
-        <ul className="menu menu-sm dropdown-content z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+        <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
           {navigation.map((item) => (
             <li key={item.name}>
               <Link href={item.href} className="font-bold">
@@ -131,7 +131,7 @@ function ThemeController(): React.JSX.Element {
         テーマ
         <ChevronDownIcon className="size-5" />
       </div>
-      <ul className="dropdown-content z-[1] h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
+      <ul className="dropdown-content z-10 h-52 w-40 overflow-y-auto rounded-box bg-base-300 p-2 shadow-2xl">
         {themes.map((theme) => (
           <li key={theme.name}>
             <input
