@@ -3,5 +3,5 @@ import { CONTACT } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Contact(): React.JSX.Element {
-  return <Heading navigation={CONTACT} />
+  return <Heading menu={CONTACT} />
 }

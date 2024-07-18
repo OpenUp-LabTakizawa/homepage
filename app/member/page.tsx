@@ -3,5 +3,5 @@ import { MEMBER } from "@/app/lib/constant"
 import type React from "react"
 
 export default function Member(): React.JSX.Element {
-  return <Heading navigation={MEMBER} />
+  return <Heading menu={MEMBER} />
 }
