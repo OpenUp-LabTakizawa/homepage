@@ -1,7 +1,7 @@
 "use client"
 
 import type { Theme } from "@/app/interfaces/theme"
-import { SITE_TITLE, navigation } from "@/app/lib/constant"
+import { NAVIGATION, SITE_TITLE } from "@/app/lib/constant"
 import {
   Bars3CenterLeftIcon,
   ChevronDownIcon,
@@ -77,7 +77,7 @@ export function Header(): React.JSX.Element {
         </Link>
       </div>
       <nav className="navbar-center hidden lg:flex">
-        <NavItems />
+        <Navigation />
       </nav>
       <div className="navbar-end">
         <ThemeController />
@@ -94,11 +94,11 @@ function DropdownMenu(): React.JSX.Element {
       </div>
       <nav>
         <ul className="menu menu-sm dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
-          {navigation.map((item) => (
-            <li key={item.name}>
-              <Link href={item.href} className="font-bold">
-                <item.icon className={`size-5 ${item.color}`} />
-                {item.name}
+          {NAVIGATION.map((menu) => (
+            <li key={menu.name}>
+              <Link href={menu.href} className="font-bold">
+                <menu.icon className={`size-5 ${menu.color}`} />
+                {menu.name}
               </Link>
             </li>
           ))}
@@ -108,14 +108,14 @@ function DropdownMenu(): React.JSX.Element {
   )
 }
 
-function NavItems(): React.JSX.Element {
+function Navigation(): React.JSX.Element {
   return (
     <ul className="menu menu-horizontal px-1">
-      {navigation.map((item) => (
-        <li key={item.name} className="hover:scale-110">
-          <Link href={item.href} className="font-bold">
-            <item.icon className={`size-5 ${item.color}`} />
-            {item.name}
+      {NAVIGATION.map((menu) => (
+        <li key={menu.name} className="hover:scale-110">
+          <Link href={menu.href} className="font-bold">
+            <menu.icon className={`size-5 ${menu.color}`} />
+            {menu.name}
           </Link>
         </li>
       ))}
