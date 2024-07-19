@@ -5,25 +5,23 @@ import type React from "react"
 
 export function Heading({ menu }: Readonly<{ menu: Menu }>): React.JSX.Element {
   return (
-    <section>
-      <div className="max-w-fit mx-auto">
-        <h1 className="typing font-bold text-3xl">
-          <menu.icon className={`inline size-9 mr-1 mb-1 ${menu.color}`} />
-          {menu.name}
-        </h1>
-      </div>
+    <section className="gap-4 grid">
       <Breadcrumb menu={menu} />
+      <h1 className="font-bold max-w-min mx-auto text-3xl typing">
+        <menu.icon className={`inline size-9 mr-1 mb-1 ${menu.color}`} />
+        {menu.name}
+      </h1>
     </section>
   )
 }
 
 function Breadcrumb({ menu }: Readonly<{ menu: Menu }>): React.JSX.Element {
   return (
-    <div className="text-sm breadcrumbs">
+    <div className="breadcrumbs pl-6 text-sm">
       <ul>
         <li>
           <Link href="/">
-            <HomeIcon className="size-5 mr-1 text-primary" />
+            <HomeIcon className="mr-1 size-5 text-primary" />
             ホーム
           </Link>
         </li>

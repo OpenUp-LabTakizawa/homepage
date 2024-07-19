@@ -11,7 +11,7 @@ export const SITE_TITLE: string = "OPENUP ラボ滝沢"
 export const INFO: Menu = {
   name: "最新情報",
   href: "/info",
-  color: "text-primary",
+  color: "text-orange-400",
   icon: NewspaperIcon,
 }
 export const ABOUT: Menu = {
