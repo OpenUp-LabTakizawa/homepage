@@ -12,7 +12,7 @@ test("h1 test", () => {
 test("p test", () => {
   const p = document.querySelectorAll("p")
   expect(p[0]?.innerText).toEqual(
-    "岩手県立大学と滝沢市が産官学連携を目的として設立した滝沢市IPUイノベーションセンターにOPEN UPラボ滝沢は入居しています。",
+    "岩手県立大学と滝沢市が産官学連携を目的として設立した滝沢市IPUイノベーションセンターにOPENUP ラボ滝沢は入居しています。",
   )
   expect(p[1]?.innerText).toEqual(
     "ラボを取り巻くコミュニティとの協働や新たな取り組みで連携し、地域社会への貢献を行っています。",

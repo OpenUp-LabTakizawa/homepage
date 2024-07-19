@@ -19,9 +19,8 @@
 }
 
 .typing {
-  animation: typing 4s steps(20) infinite, blink .7s infinite;
+  animation: typing 8s steps(40) infinite, blink .7s infinite;
   border-right: .15em solid orange;
-  margin: auto;
   overflow: hidden;
   white-space: nowrap;
 }

@@ -1,40 +1,43 @@
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline"
+import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
 import Link from "next/link"
 import type React from "react"
 
 export default function Home(): React.JSX.Element {
   return (
-    <div className="hero min-h-screen bg-[url('/iwate_mountain.webp')]">
-      <div className="hero-overlay bg-opacity-60" />
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <div className="max-w-fit mb-5 mx-auto">
-            <h1 className="typing font-bold text-3xl">
-              <span className="font-bold text-5xl text-primary">
-                テクノロジー
-              </span>
-              で
-              <br />
-              <span className="font-bold text-5xl text-accent">地域貢献</span>
-              に取り組む
-            </h1>
-          </div>
-          <p className="mb-5">
-            岩手県立大学と滝沢市が産官学連携を目的として設立した滝沢市IPUイノベーションセンターにOPEN
-            UPラボ滝沢は入居しています。
-          </p>
-          <p className="mb-5">
-            ラボを取り巻くコミュニティとの協働や新たな取り組みで連携し、地域社会への貢献を行っています。
-          </p>
-          <Link
-            href="/about"
-            className="[&:not(:hover)]:animate-bounce btn btn-warning"
-          >
-            <QuestionMarkCircleIcon className="size-5 text-accent" />
-            ラボ滝沢とは？
-          </Link>
-        </div>
-      </div>
-    </div>
+    <article className="hero min-h-screen bg-[url('/iwate_mountain.avif')]">
+      <div className="hero-overlay bg-opacity-70" />
+      <section className="hero-content gap-4 grid text-center text-neutral-content">
+        <h1 className="font-bold max-w-fit text-3xl typing">
+          <span className="text-5xl text-primary">テクノロジー</span>
+          で
+          <br />
+          <span className="text-5xl text-accent">地域貢献</span>
+          に取り組む
+        </h1>
+        <p>
+          岩手県立大学と滝沢市が
+          <br />
+          産官学連携を目的として設立した
+          <br />
+          滝沢市IPUイノベーションセンターに
+          <br />
+          {SITE_TITLE}は入居しています。
+        </p>
+        <p>
+          ラボを取り巻くコミュニティとの協働や
+          <br />
+          新たな取り組みで連携し、
+          <br />
+          地域社会への貢献を行っています。
+        </p>
+        <Link
+          href="/about"
+          className="[&:not(:hover)]:animate-bounce btn btn-warning mx-auto w-fit"
+        >
+          <ABOUT.icon className={`size-5 ${ABOUT.color}`} />
+          {ABOUT.name}
+        </Link>
+      </section>
+    </article>
   )
 }
