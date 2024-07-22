@@ -8,8 +8,7 @@ import {
   SwatchIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import type React from "react"
-import { type RefObject, useRef, useState } from "react"
+import { type JSX, type RefObject, useRef, useState } from "react"
 
 const themes: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -46,7 +45,7 @@ const themes: Theme[] = [
   { name: "サンセット", value: "sunset" },
 ] as const
 
-export function Header(): React.JSX.Element {
+export function Header(): JSX.Element {
   const [scrollY, setScrollY] = useState<{
     scrollY: number
     isScrollDown: boolean
@@ -89,7 +88,7 @@ export function Header(): React.JSX.Element {
   )
 }
 
-function DropdownMenu(): React.JSX.Element {
+function DropdownMenu(): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
   if (typeof window !== "undefined") {
@@ -121,7 +120,7 @@ function DropdownMenu(): React.JSX.Element {
   )
 }
 
-function Navigation(): React.JSX.Element {
+function Navigation(): JSX.Element {
   return (
     <ul className="menu menu-horizontal px-1">
       {NAVIGATION.map((menu) => (
@@ -136,7 +135,7 @@ function Navigation(): React.JSX.Element {
   )
 }
 
-function ThemeController(): React.JSX.Element {
+function ThemeController(): JSX.Element {
   return (
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn gap-1">

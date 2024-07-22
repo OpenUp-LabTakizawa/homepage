@@ -1,10 +1,10 @@
+import { ScrollToTop } from "@/app/components/button/scrollToTop"
+import { Footer } from "@/app/components/layout/footer"
+import { Header } from "@/app/components/layout/header"
+import { SITE_TITLE } from "@/app/lib/constant"
 import type { Metadata } from "next"
-import type React from "react"
-import { Footer } from "./components/layout/footer"
-import { Header } from "./components/layout/header"
+import type { JSX, ReactNode } from "react"
 import "./globals.css"
-import { ScrollToTop } from "./components/button/scrollToTop"
-import { SITE_TITLE } from "./lib/constant"
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -14,9 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: ReactNode }>): JSX.Element {
   return (
     <html lang="ja">
       <body>
