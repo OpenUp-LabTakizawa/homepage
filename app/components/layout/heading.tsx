@@ -1,9 +1,9 @@
 import type { Menu } from "@/app/interfaces/menu"
 import { HomeIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export function Heading({ menu }: Readonly<{ menu: Menu }>): React.JSX.Element {
+export function Heading({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
   return (
     <section className="gap-4 grid">
       <Breadcrumb menu={menu} />
@@ -15,7 +15,7 @@ export function Heading({ menu }: Readonly<{ menu: Menu }>): React.JSX.Element {
   )
 }
 
-function Breadcrumb({ menu }: Readonly<{ menu: Menu }>): React.JSX.Element {
+function Breadcrumb({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
   return (
     <div className="breadcrumbs pl-6 text-sm">
       <ul>

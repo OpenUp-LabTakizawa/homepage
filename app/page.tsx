@@ -1,8 +1,8 @@
 import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
 import Link from "next/link"
-import type React from "react"
+import type { JSX } from "react"
 
-export default function Home(): React.JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <article className="hero min-h-screen bg-[url('/iwate_mountain.avif')]">
       <div className="hero-overlay bg-opacity-70" />
