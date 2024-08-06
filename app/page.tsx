@@ -1,11 +1,19 @@
 import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
+import Image from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
   return (
-    <article className="hero min-h-screen bg-[url('/iwate_mountain.avif')]">
-      <div className="hero-overlay bg-opacity-70" />
+    <article className="hero min-h-screen">
+      <Image
+        src="/iwate_mountain.avif"
+        alt="iwate_mountain"
+        width={1000}
+        height={1000}
+        className="h-full object-cover w-full"
+      />
+      <div className="bg-opacity-70 hero-overlay" />
       <section className="hero-content gap-4 grid text-center text-neutral-content">
         <h1 className="font-bold max-w-fit text-3xl typing">
           <span className="text-5xl text-primary">テクノロジー</span>

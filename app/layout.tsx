@@ -9,7 +9,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: SITE_TITLE,
   description: "地域に寄り添った社会課題解決コミュニティ",
-  metadataBase: new URL("https://openuplab-takizawa.jp"),
+  metadataBase: new URL("https://openuplab-takizawa.com"),
 }
 
 export default function RootLayout({
