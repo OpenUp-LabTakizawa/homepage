@@ -7,8 +7,8 @@ export function Heading({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
   return (
     <section className="gap-4 grid">
       <Breadcrumb menu={menu} />
-      <h1 className="font-bold max-w-min mx-auto text-3xl typing">
-        <menu.icon className={`inline size-9 mr-1 mb-1 ${menu.color}`} />
+      <h1 className="flex font-bold items-center max-w-min mx-auto text-3xl typing">
+        <menu.icon className={`mr-1 size-9 ${menu.color}`} />
         {menu.name}
       </h1>
     </section>
@@ -26,7 +26,7 @@ function Breadcrumb({ menu }: Readonly<{ menu: Menu }>): JSX.Element {
           </Link>
         </li>
         <li>
-          <menu.icon className={`size-5 mr-1 ${menu.color}`} />
+          <menu.icon className={`mr-1 size-5 ${menu.color}`} />
           {menu.name}
         </li>
       </ul>

@@ -8,7 +8,7 @@ import {
   SwatchIcon,
 } from "@heroicons/react/24/outline"
 import Link from "next/link"
-import { type JSX, type RefObject, useRef, useState } from "react"
+import { type JSX, type RefObject, useEffect, useRef, useState } from "react"
 
 const themes: Theme[] = [
   { name: "デフォルト", value: "light" },
@@ -52,14 +52,23 @@ export function Header(): JSX.Element {
   }>({ scrollY: 0, isScrollDown: false })
   const headerHeight: number = 100
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollY({
         scrollY: window.scrollY,
         isScrollDown: scrollY.scrollY < window.scrollY,
       })
     })
-  }
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        setScrollY({
+          scrollY: window.scrollY,
+          isScrollDown: scrollY.scrollY < window.scrollY,
+        })
+      })
+    }
+  })
 
   return (
     <header
@@ -91,13 +100,21 @@ export function Header(): JSX.Element {
 function DropdownMenu(): JSX.Element {
   const ref: RefObject<HTMLDetailsElement> = useRef<HTMLDetailsElement>(null)
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     window.addEventListener("click", () => {
       if (ref.current) {
         ref.current.open = false
       }
     })
-  }
+
+    return () => {
+      window.removeEventListener("click", () => {
+        if (ref.current) {
+          ref.current.open = false
+        }
+      })
+    }
+  })
 
   return (
     <details ref={ref} className="dropdown">
