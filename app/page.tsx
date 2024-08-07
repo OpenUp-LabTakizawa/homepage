@@ -1,18 +1,23 @@
 import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
-import Image from "next/image"
+import { getBackgroundImage } from "@/app/lib/getBackgroundImage"
+import { getImageProps } from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
 export default function Home(): JSX.Element {
+  const {
+    props: { srcSet },
+  } = getImageProps({
+    alt: "iwate_mountain",
+    width: 1024,
+    height: 1024,
+    src: "/iwate_mountain.avif",
+  })
+  const backgroundImage = getBackgroundImage(srcSet)
+  const style = { height: "100vh", width: "100vw", backgroundImage }
+
   return (
-    <article className="hero min-h-screen">
-      <Image
-        src="/iwate_mountain.avif"
-        alt="iwate_mountain"
-        width={1000}
-        height={1000}
-        className="h-full object-cover w-full"
-      />
+    <article className="hero min-h-screen" style={style}>
       <div className="bg-opacity-70 hero-overlay" />
       <section className="hero-content gap-4 grid text-center text-neutral-content">
         <h1 className="font-bold max-w-fit text-3xl typing">
