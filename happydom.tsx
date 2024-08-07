@@ -8,6 +8,7 @@ GlobalRegistrator.register()
 interface EsModuleDefault<T> {
   readonly __esModule: true
   readonly default: T
+  readonly getImageProps: T
 }
 
 type StaticRequire = ImageProps["src"] extends
@@ -49,5 +50,6 @@ mock.module("next/image", (): EsModuleDefault<ComponentType<ImageProps>> => {
   return {
     __esModule: true,
     default: MockNextImage,
+    getImageProps: MockNextImage,
   }
 })
