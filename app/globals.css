@@ -19,7 +19,7 @@
 }
 
 .typing {
-  animation: typing 8s steps(40) infinite, blink .7s infinite;
+  animation: typing 12s steps(50) infinite, blink .7s infinite;
   border-right: .15em solid orange;
   overflow: hidden;
   white-space: nowrap;
@@ -88,8 +88,8 @@
   100% {
     width: 0;
   }
-  20%,
-  80% {
+  40%,
+  60% {
     width: 100%;
   }
 }
