@@ -155,12 +155,12 @@ function Navigation(): JSX.Element {
 function ThemeController(): JSX.Element {
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn gap-1">
+      <button type="button" className="btn gap-1">
         <SwatchIcon className="size-5 text-success" />
-        テーマ
-        <ChevronDownIcon className="size-5" />
-      </div>
-      <ul className="bg-base-300 dropdown-content h-52 overflow-y-auto p-2 rounded-box shadow-2xl z-10">
+        <span className="hidden md:block">テーマ</span>
+        <ChevronDownIcon className="hidden size-5 md:block" />
+      </button>
+      <ul className="bg-base-300 dropdown-content h-52 overflow-y-auto rounded-box shadow-2xl z-10">
         {themes.map((theme) => (
           <li key={theme.name}>
             <input
