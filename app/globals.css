@@ -2,16 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.arrow-up {
+  animation: scroll-up 1.5s infinite;
+}
+
 .fade-out-down {
   animation: fade-out-down 1.5s forwards;
 }
 
 .fade-in-up {
   animation: fade-in-up 1.5s;
-}
-
-.scroll-up {
-  animation: scroll-up 1.5s infinite;
 }
 
 .tilt-shaking:hover {
@@ -23,6 +23,16 @@
   border-right: .15em solid orange;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@keyframes arrow-up {
+  0%,
+  40% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translatey(-8px);
+  }
 }
 
 @keyframes blink {
@@ -54,16 +64,6 @@
   100% {
     opacity: 1;
     transform: translatey(0);
-  }
-}
-
-@keyframes scroll-up {
-  0%,
-  40% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translatey(-8px);
   }
 }
 
