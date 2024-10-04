@@ -10,6 +10,7 @@ on:
     paths:
       - "app/**"
       - "public/**"
+      - ".dockerignore"
       - "bun.lockb"
       - "package.json"
       - "*config.*"
