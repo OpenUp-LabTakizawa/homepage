@@ -1,7 +1,7 @@
 import daisyui from "daisyui"
 import type { Config } from "tailwindcss"
 
-const config: Config = {
+export default {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [daisyui],
   daisyui: {
@@ -40,5 +40,4 @@ const config: Config = {
       "sunset",
     ],
   },
-}
-export default config
+} satisfies Config
