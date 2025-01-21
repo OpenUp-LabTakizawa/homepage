@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@happy-dom/global-registrator": "^16.6.0",
+    "@happy-dom/global-registrator": "^16.7.1",
     "@playwright/test": "next",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
