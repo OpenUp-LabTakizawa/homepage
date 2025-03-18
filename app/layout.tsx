@@ -3,7 +3,11 @@ import { Footer } from "@/app/components/layout/footer"
 import { Header } from "@/app/components/layout/header"
 import { SITE_TITLE } from "@/app/lib/constant"
 import type { Metadata } from "next"
-import type { JSX, ReactNode } from "react"
+import {
+  type JSX,
+  type ReactNode,
+  unstable_ViewTransition as ViewTransition,
+} from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -18,12 +22,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header />
-        <main>
-          {children}
-          <ScrollToTop />
-        </main>
-        <Footer />
+        <ViewTransition>
+          <Header />
+          <main>
+            {children}
+            <ScrollToTop />
+          </main>
+          <Footer />
+        </ViewTransition>
       </body>
     </html>
   )
