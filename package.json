@@ -16,8 +16,8 @@
     "@heroicons/react": "^2.2.0",
     "@next/plugin-rspack": "canary",
     "next": "canary",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
