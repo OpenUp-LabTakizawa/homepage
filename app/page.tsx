@@ -1,6 +1,7 @@
 import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
 import { getBackgroundImage } from "@/app/lib/getBackgroundImage"
-import { getImageProps } from "next/image"
+import banner from "@/public/202505_kanto_banner_cancel.avif"
+import Image, { getImageProps } from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
 
@@ -50,6 +51,16 @@ export default function Home(): JSX.Element {
           <ABOUT.icon className={`size-5 ${ABOUT.color}`} />
           {ABOUT.name}
         </Link>
+        <Image
+          src={banner}
+          // src="/content/202505_kanto_banner_start.avif"
+          width={540}
+          height={106}
+          alt="こどもテックキャラバン-関東イベントバナー"
+          placeholder="blur"
+          priority={true}
+          className="duration-200 ease-out mb-3 w-full"
+        />
       </section>
     </article>
   )
