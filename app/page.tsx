@@ -1,6 +1,7 @@
 import { ABOUT, SITE_TITLE } from "@/app/lib/constant"
 import { getBackgroundImage } from "@/app/lib/getBackgroundImage"
 import banner from "@/public/202505_kanto_banner_cancel.avif"
+import bannerPng from "@/public/202505_kanto_banner_cancel.png"
 import Image, { getImageProps } from "next/image"
 import Link from "next/link"
 import type { JSX } from "react"
@@ -54,6 +55,16 @@ export default function Home(): JSX.Element {
         <Image
           src={banner}
           // src="/content/202505_kanto_banner_start.avif"
+          width={540}
+          height={106}
+          alt="こどもテックキャラバン-関東イベントバナー"
+          placeholder="blur"
+          priority={true}
+          className="duration-200 ease-out mb-3 w-full"
+        />
+        <Image
+          src={bannerPng}
+          // src="/content/202505_kanto_banner_start.png"
           width={540}
           height={106}
           alt="こどもテックキャラバン-関東イベントバナー"
